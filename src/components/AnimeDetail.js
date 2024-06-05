@@ -1,8 +1,6 @@
 // src/components/AnimeDetail.js
 import React from 'react';
 import '../styles/AnimeDetail.css';
-
-
 const AnimeDetail = ({ anime }) => {
     return (
         <div className="anime-detail">
@@ -14,6 +12,4 @@ const AnimeDetail = ({ anime }) => {
         </div>
     );
 };
-
-
 export default AnimeDetail;

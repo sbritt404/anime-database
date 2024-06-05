@@ -1,12 +1,12 @@
+/* src/styles/ContentCard.css */
 .content-area {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
     justify-content: center;
-}
-
-.content-card {
+  }
+  .content-card {
     width: 200px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -14,27 +14,22 @@
     cursor: pointer;
     background-color: white;
     transition: transform 0.2s;
-}
-
-.content-card:hover {
-    transform: scale(1.05);
-}
-
-.content-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.content-card h3 {
-    font-size: 1rem;
-    margin: 0.5rem;
-    text-align: center;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .content-card {
-        width: 100%;
-    }
-}
+  }
+  .content-card:hover {
+  transform: scale(1.05);
+  }
+  .content-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  }
+  .content-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem;
+  text-align: center;
+  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+  .content-card {
+  width: 100%;
+  }}
