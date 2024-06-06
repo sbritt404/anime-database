@@ -1,15 +1,14 @@
 // src/context/AnimeContext.js
 import React, { createContext, useState } from 'react';
 import axios from 'axios';
+import debounce from 'lodash.debounce';
 const AnimeContext = createContext();
-
-
 export const AnimeProvider = ({ children }) => {
   const [animeList, setAnimeList] = useState([]);
   const [selectedAnime, setSelectedAnime] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const fetchAnimeByTitle = async (title) => {
+  const fetchAnimeByTitle = debounce(async (title) => {
     setLoading(true);
     setError(null);
     try {
@@ -20,7 +19,7 @@ export const AnimeProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, 500);
   const fetchAnimeById = async (id) => {
     setLoading(true);
     setError(null);
@@ -33,6 +32,8 @@ export const AnimeProvider = ({ children }) => {
       setLoading(false);
     }
   };
+
+  console.log("AnimeProvider: setSelectedAnime is defined:", !!setSelectedAnime);
   return (
     <AnimeContext.Provider value={{
       animeList,
@@ -48,3 +49,9 @@ export const AnimeProvider = ({ children }) => {
   );
 };
 export { AnimeContext };
+
+
+
+
+
+

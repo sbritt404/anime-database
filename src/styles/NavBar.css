@@ -1,40 +1,47 @@
 /* src/styles/NavBar.css */
 .navbar {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    width: 100%;
-    text-align: left;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-toggle {
+  background-color: #444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-top: 1px solid #555;
+}
+
+.menu li:hover {
+  background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    text-align: center;
   }
+
   .dropdown-toggle {
-    background-color: #444;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
+    width: 100%;
   }
-  .menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+
   .menu li {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-top: 1px solid #555;
+    text-align: center;
   }
-  .menu li:hover {
-    background-color: #555;
-  }
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar {
-      text-align: center;
-    }
-    .dropdown-toggle {
-      width: 100%;
-    }
-    .menu li {
-      text-align: center;
-    }
-  }
+}

@@ -1,38 +1,45 @@
 /* src/styles/AnimeDetail.css */
 .anime-detail {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    max-width: 400px;
-    margin: 1rem auto;
-  }
-  .anime-detail img {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  max-width: 400px;
+  margin: 1rem auto;
+}
+
+.anime-detail img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.anime-detail h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.anime-detail p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .anime-detail {
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
   }
+
+  .anime-detail img {
+    border-bottom: none;
+  }
+
   .anime-detail h2 {
-    font-size: 1.5rem;
-    margin: 1rem 0;
+    font-size: 1.2rem;
   }
+
   .anime-detail p {
-    font-size: 1rem;
-    margin: 0.5rem 0;
+    font-size: 0.9rem;
   }
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .anime-detail {
-      width: 100%;
-      padding: 0.5rem;
-    }
-    .anime-detail img {
-      border-bottom: none;
-    }
-    .anime-detail h2 {
-      font-size: 1.2rem;
-    }
-    .anime-detail p {
-      font-size: 0.9rem;
-    }
-  }
+}

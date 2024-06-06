@@ -2,7 +2,6 @@
 import React, { useState, useContext } from 'react';
 import { AnimeContext } from '../context/AnimeContext';
 import '../styles/SearchBar.css';
-
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const { fetchAnimeByTitle } = useContext(AnimeContext);
@@ -24,5 +23,10 @@ const SearchBar = () => {
     </div>
   );
 };
-
 export default SearchBar;
+
+
+
+
+
+
