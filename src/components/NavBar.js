@@ -1,9 +1,25 @@
 // src/components/NavBar.js
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AnimeContext } from '../context/AnimeContext';
 import '../styles/NavBar.css';
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const categories = ['Popular', 'Airing', 'Upcoming'];
+  const { fetchTopAnime, fetchAiringAnime, fetchUpcomingAnime } = useContext(AnimeContext);
+
+  const handleCategoryClick = (category) => {
+    setIsOpen(false);
+    if (category === 'Top') {
+      fetchTopAnime();
+    } else if (category === 'Airing') {
+      fetchAiringAnime();
+    } else if (category === 'Upcoming') {
+      fetchUpcomingAnime();
+    }
+  };
+
+  const categories = ['Top', 'Airing', 'Upcoming'];
+
   return (
     <div className="navbar">
       <button className="dropdown-toggle" onClick={() => setIsOpen(!isOpen)}>
@@ -12,11 +28,12 @@ const NavBar = () => {
       {isOpen && (
         <ul className="menu">
           {categories.map((category, index) => (
-            <li key={index}>{category}</li>
+            <li key={index} onClick={() => handleCategoryClick(category)}>{category}</li>
           ))}
         </ul>
       )}
     </div>
   );
 };
+
 export default NavBar;
